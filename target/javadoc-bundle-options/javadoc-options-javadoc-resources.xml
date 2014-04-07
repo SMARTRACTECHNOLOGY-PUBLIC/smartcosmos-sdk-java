@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javadocOptions>
+  <groups>
+    <group>
+      <title>Model</title>
+      <packages>com.snapbundle.model.base:com.snapbundle.model.context:com.snapbundle.pojo.base:com.snapbundle.pojo.context:com.snapbundle.builder</packages>
+    </group>
+    <group>
+      <title>GeoJSON Support</title>
+      <packages>com.snapbundle.model.geo:com.snapbundle.geo:com.snapbundle.pojo.geo</packages>
+    </group>
+    <group>
+      <title>Integration</title>
+      <packages>com.snapbundle.model.event:com.snapbundle.model.integration:com.snapbundle.pojo.event:com.snapbundle.pojo.integration</packages>
+    </group>
+    <group>
+      <title>Extensions</title>
+      <packages>com.snapbundle.model.extension:com.snapbundle.pojo.extension</packages>
+    </group>
+    <group>
+      <title>Utilities</title>
+      <packages>com.snapbundle.util*:com.snapbundle</packages>
+    </group>
+  </groups>
+  <docletArtifacts>
+    <docletArtifact />
+  </docletArtifacts>
+  <tagletArtifacts>
+    <tagletArtifact />
+  </tagletArtifacts>
+  <docfilesSubdirsUsed>true</docfilesSubdirsUsed>
+  <javadocResourcesDirectory>src/main/javadoc</javadocResourcesDirectory>
+</javadocOptions>
