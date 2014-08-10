@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="Wisemans-MacBook-Pro.local" name="net.smartcosmos.geo.GeoJsonTest" tests="26" failures="0" timestamp="30 Jul 2014 22:39:32 GMT" time="0.314" errors="0">
+  <testcase name="testBbox" time="0.133" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testFeatureCollection" time="0.006" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testFeatureCollectionBothWays" time="0.045" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testGeometricCollection" time="0.01" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testLineString" time="0.001" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testLinkedCrs" time="0.002" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testMultiPolygon" time="0.002" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testMultilineString" time="0.001" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testMultipoint" time="0.0" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testNamedCrs" time="0.0" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testPoint" time="0.0" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testPolygon" time="0.0" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testPolygonWithHoles" time="0.0" classname="net.smartcosmos.geo.GeoJsonTest"/>
+  <testcase name="testAccount" time="0.034" classname="net.smartcosmos.pojo.JsonTest"/>
+  <testcase name="testJsonMetadataObject" time="0.033" classname="net.smartcosmos.pojo.JsonTest"/>
+  <testcase name="testMetadataObject" time="0.001" classname="net.smartcosmos.pojo.JsonTest"/>
+  <testcase name="testBinaryEncodeDecode" time="0.001" classname="net.smartcosmos.pojo.MapperTest"/>
+  <testcase name="testBooleanMapper" time="0.0" classname="net.smartcosmos.pojo.MapperTest"/>
+  <testcase name="testDateMapper" time="0.001" classname="net.smartcosmos.pojo.MapperTest"/>
+  <testcase name="testDoubleMapper" time="0.001" classname="net.smartcosmos.pojo.MapperTest"/>
+  <testcase name="testFloatMapper" time="0.001" classname="net.smartcosmos.pojo.MapperTest"/>
+  <testcase name="testIntegerMapper" time="0.001" classname="net.smartcosmos.pojo.MapperTest"/>
+  <testcase name="testJsonMapper" time="0.001" classname="net.smartcosmos.pojo.MapperTest"/>
+  <testcase name="testLongMapper" time="0.0" classname="net.smartcosmos.pojo.MapperTest"/>
+  <testcase name="testStringMapper" time="0.0" classname="net.smartcosmos.pojo.MapperTest"/>
+  <testcase name="testSignature" time="0.016" classname="net.smartcosmos.pojo.SignatureTest"/>
+</testsuite>
