@@ -162,6 +162,13 @@ a.button span {
   background: transparent url(../images/octocat-icon.png) 12px 50% no-repeat;
 }
 #view-on-github {
+}
+
+#view-in-central-repository span {
+  background: transparent url(../images/maven.png) 12px 50% no-repeat;
+}
+
+#view-in-central-repository {
   margin-right: 0;
 }
 
