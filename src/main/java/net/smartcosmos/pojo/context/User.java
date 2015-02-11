@@ -17,15 +17,21 @@
  * limitations under the License.
  * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
  */
+
 package net.smartcosmos.pojo.context;
-import com.fasterxml.jackson.annotation.JsonView;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import net.smartcosmos.am.model.context.IRole;
 import net.smartcosmos.model.context.IAccount;
 import net.smartcosmos.model.context.IUser;
 import net.smartcosmos.model.context.RoleType;
 import net.smartcosmos.pojo.base.DomainResource;
 import net.smartcosmos.util.json.JsonGenerationView;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 public class User extends DomainResource< IUser > implements IUser
 {
@@ -35,11 +41,17 @@ public class User extends DomainResource< IUser > implements IUser
     @JsonView(JsonGenerationView.Minimum.class)
     protected RoleType roleType;
     @JsonView(JsonGenerationView.Minimum.class)
+    @JsonDeserialize(as = List.class)
+    protected List< IRole > roles = new ArrayList<IRole>();
+    @JsonView(JsonGenerationView.Minimum.class)
     private String emailAddress;
     @JsonView(JsonGenerationView.Full.class)
     private String givenName;
     @JsonView(JsonGenerationView.Full.class)
     private String surname;
+    @JsonView(JsonGenerationView.Full.class)
+    private Boolean enable;
+
     @Override
     public String getEmailAddress()
     {
@@ -118,6 +130,30 @@ public class User extends DomainResource< IUser > implements IUser
     }
 
     @Override
+    public void setEnable(Boolean enable)
+    {
+        this.enable = enable;
+    }
+
+    @Override
+    public Boolean isEnable()
+    {
+        return enable;
+    }
+    
+    @Override
+    public List<IRole> getRoles()
+    {
+        return this.roles;
+    }
+
+    @Override
+    public void setRoles(List<IRole> roles) 
+    {
+        this.roles = roles;
+    }
+
+    @Override
     public boolean equals(Object o)
     {
         if (this == o) return true;
@@ -146,5 +182,5 @@ public class User extends DomainResource< IUser > implements IUser
         result = 31 * result + roleType.hashCode();
         return result;
     }
-
+   
 }

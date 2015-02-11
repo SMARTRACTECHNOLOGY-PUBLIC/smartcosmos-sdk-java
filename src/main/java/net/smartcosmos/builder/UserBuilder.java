@@ -22,9 +22,12 @@
 package net.smartcosmos.builder;
 
 import com.google.common.base.Preconditions;
+import net.smartcosmos.am.model.context.IRole;
 import net.smartcosmos.model.context.IUser;
 import net.smartcosmos.model.context.RoleType;
 import net.smartcosmos.pojo.context.User;
+
+import java.util.List;
 
 /**
  * Convenience Builder pattern class for creating new {@link net.smartcosmos.model.context.IUser} instances.
@@ -63,10 +66,21 @@ public final class UserBuilder extends AbstractMonikerBuilder< IUser, UserBuilde
         return this;
     }
 
+    public UserBuilder setRoles(List< IRole > roles)
+    {
+        instance.setRoles(roles);
+        return this;
+    }
+
     public UserBuilder setUrn(String urn)
     {
         instance.setUrn(urn);
         return this;
     }
     
+    public UserBuilder setEnable(Boolean enable)
+    {
+        instance.setEnable(enable);
+        return this;
+    }
 }
