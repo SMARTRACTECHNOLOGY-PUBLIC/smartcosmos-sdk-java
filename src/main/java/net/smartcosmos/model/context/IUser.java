@@ -46,14 +46,10 @@ public interface IUser extends IAccountDomainResource<IUser>
     String getEmailAddress();
 
     void setEmailAddress(String emailAddress);
-
-    RoleType getRoleType();
     
     List<IRole> getRoles();
     
     void setRoles(List<IRole> roles);
-
-    void setRoleType(RoleType role);
 
     void copy(IUser user);
 

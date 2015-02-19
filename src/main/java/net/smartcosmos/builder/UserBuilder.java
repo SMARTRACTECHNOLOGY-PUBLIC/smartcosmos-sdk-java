@@ -21,13 +21,13 @@
 
 package net.smartcosmos.builder;
 
-import com.google.common.base.Preconditions;
+import java.util.List;
+
 import net.smartcosmos.am.model.context.IRole;
 import net.smartcosmos.model.context.IUser;
-import net.smartcosmos.model.context.RoleType;
 import net.smartcosmos.pojo.context.User;
 
-import java.util.List;
+import com.google.common.base.Preconditions;
 
 /**
  * Convenience Builder pattern class for creating new {@link net.smartcosmos.model.context.IUser} instances.
@@ -45,7 +45,6 @@ public final class UserBuilder extends AbstractMonikerBuilder< IUser, UserBuilde
 
         Preconditions.checkNotNull(emailAddress);
         instance.setEmailAddress(emailAddress);
-        instance.setRoleType(RoleType.User);
     }
 
     public UserBuilder setGivenName(String givenName)
@@ -57,12 +56,6 @@ public final class UserBuilder extends AbstractMonikerBuilder< IUser, UserBuilde
     public UserBuilder setSurname(String surname)
     {
         instance.setSurname(surname);
-        return this;
-    }
-
-    public UserBuilder setRoleType(RoleType roleType)
-    {
-        instance.setRoleType(roleType);
         return this;
     }
 
