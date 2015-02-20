@@ -22,9 +22,9 @@ package net.smartcosmos.am.builder;
 
 import net.smartcosmos.am.model.context.IRole;
 import net.smartcosmos.am.pojo.context.Role;
-import net.smartcosmos.builder.AbstractNamedObjectBuilder;
+import net.smartcosmos.builder.AbstractBuilder;
 
-public class RoleBuilder extends AbstractNamedObjectBuilder<IRole, RoleBuilder>
+public class RoleBuilder extends AbstractBuilder<IRole>
 {
 
     public RoleBuilder()
@@ -35,12 +35,6 @@ public class RoleBuilder extends AbstractNamedObjectBuilder<IRole, RoleBuilder>
     public RoleBuilder setName(String name)
     {
         instance.setName(name);
-        return this;
-    }
-
-    public RoleBuilder setDescription(String description)
-    {
-        instance.setDescription(description);
         return this;
     }
 

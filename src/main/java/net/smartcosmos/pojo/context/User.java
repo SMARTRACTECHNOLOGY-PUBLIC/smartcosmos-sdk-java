@@ -42,9 +42,9 @@ public class User extends DomainResource< IUser > implements IUser
     protected List< IRole > roles = new ArrayList<IRole>();
     @JsonView(JsonGenerationView.Minimum.class)
     private String emailAddress;
-    @JsonView(JsonGenerationView.Minimum.class)
+    @JsonView(JsonGenerationView.Standard.class)
     private String givenName;
-    @JsonView(JsonGenerationView.Minimum.class)
+    @JsonView(JsonGenerationView.Standard.class)
     private String surname;
     @JsonView(JsonGenerationView.Minimum.class)
     private Boolean enable;

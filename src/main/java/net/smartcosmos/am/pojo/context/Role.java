@@ -22,22 +22,17 @@ package net.smartcosmos.am.pojo.context;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonView;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
 import net.smartcosmos.am.model.context.IRole;
-import net.smartcosmos.pojo.base.NamedObject;
+import net.smartcosmos.pojo.base.DomainResource;
 import net.smartcosmos.util.json.JsonGenerationView;
 
-@JsonInclude(value = Include.NON_EMPTY)
-@JsonIgnoreProperties(value = {"uniqueId", "lastModifiedTimestamp", "activeFlag", "active" })
-public class Role extends NamedObject< IRole > implements IRole, Serializable
-{ 
-    @JsonView(JsonGenerationView.Full.class)
+import com.fasterxml.jackson.annotation.JsonView;
+
+public class Role extends DomainResource<IRole> implements IRole, Serializable
+{
+    @JsonView(JsonGenerationView.Minimum.class)
     private String name;
-    private String description;
+
     private static final long serialVersionUID = 6049307445281143467L;
 
     public Role()
@@ -55,20 +50,38 @@ public class Role extends NamedObject< IRole > implements IRole, Serializable
         this.name = name;
     }
 
-    public String getDescription()
+    @Override
+    public int hashCode()
     {
-        return description;
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        return result;
     }
 
-    public void setDescription(String description)
+    @Override
+    public boolean equals(Object obj)
     {
-        this.description = description;
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Role other = (Role) obj;
+        if (name == null)
+        {
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        return true;
     }
 
     @Override
     public String toString()
     {
-        return "Role [name=" + name + ", description=" + description + "]";
+        return "Role [name=" + name + "]";
     }
 
 }

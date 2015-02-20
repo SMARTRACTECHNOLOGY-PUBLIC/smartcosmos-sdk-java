@@ -34,7 +34,7 @@ public abstract class DomainResource<T> implements IDomainResource<T>
     @JsonView(JsonGenerationView.Minimum.class)
     protected String urn;
 
-    @JsonView(JsonGenerationView.Standard.class)
+    @JsonView(JsonGenerationView.Full.class)
     protected long lastModifiedTimestamp;
 
     @JsonView(JsonGenerationView.Full.class)
