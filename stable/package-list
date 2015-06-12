@@ -12,6 +12,7 @@ net.smartcosmos.model.queue
 net.smartcosmos.objects.builder
 net.smartcosmos.objects.model.context
 net.smartcosmos.objects.pojo.context
+net.smartcosmos.objects.pojo.reporting
 net.smartcosmos.pojo.base
 net.smartcosmos.pojo.batch
 net.smartcosmos.pojo.context
