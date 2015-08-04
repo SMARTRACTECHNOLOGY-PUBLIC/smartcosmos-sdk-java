@@ -22,6 +22,7 @@ package net.smartcosmos.objects.model.context;
 
 import net.smartcosmos.model.base.IAccountDomainResource;
 import net.smartcosmos.model.base.INamedObject;
+import net.smartcosmos.model.base.IScopedObject;
 import net.smartcosmos.model.base.ITypedObject;
 
 /**
@@ -38,7 +39,7 @@ import net.smartcosmos.model.base.ITypedObject;
  * the account context. It is up to the developer to devise a URN strategy that
  * meets this requirement.
  */
-public interface IObject extends IAccountDomainResource<IObject>, INamedObject<IObject>, ITypedObject
+public interface IObject extends IAccountDomainResource<IObject>, INamedObject<IObject>, ITypedObject, IScopedObject
 {
     String getObjectUrn();
 

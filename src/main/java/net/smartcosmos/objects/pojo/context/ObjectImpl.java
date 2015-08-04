@@ -25,10 +25,12 @@ import net.smartcosmos.objects.model.context.IObject;
 import net.smartcosmos.pojo.base.AccountTypedNamedObject;
 import net.smartcosmos.util.json.JsonGenerationView;
 
-public class ObjectImpl extends AccountTypedNamedObject<IObject> implements IObject
+public class ObjectImpl extends AccountTypedNamedObject<IObject>implements IObject
 {
     @JsonView(JsonGenerationView.Minimum.class)
     protected String objectUrn;
+
+    protected String scopeUri;
 
     @Override
     public String getObjectUrn()
@@ -43,24 +45,63 @@ public class ObjectImpl extends AccountTypedNamedObject<IObject> implements IObj
     }
 
     @Override
-    public boolean equals(Object o)
+    public String toString()
     {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
+        StringBuilder builder = new StringBuilder();
+        builder.append("ObjectImpl [objectUrn=");
+        builder.append(objectUrn);
+        builder.append(", scopeUri=");
+        builder.append(scopeUri);
+        builder.append(", toString()=");
+        builder.append(super.toString());
+        builder.append("]");
+        return builder.toString();
+    }
 
-        ObjectImpl object = (ObjectImpl) o;
-
-        if (!objectUrn.equals(object.objectUrn)) return false;
-
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        ObjectImpl other = (ObjectImpl) obj;
+        if (objectUrn == null)
+        {
+            if (other.objectUrn != null)
+                return false;
+        } else if (!objectUrn.equals(other.objectUrn))
+            return false;
+        if (scopeUri == null)
+        {
+            if (other.scopeUri != null)
+                return false;
+        } else if (!scopeUri.equals(other.scopeUri))
+            return false;
         return true;
     }
 
     @Override
     public int hashCode()
     {
+        final int prime = 31;
         int result = super.hashCode();
-        result = 31 * result + objectUrn.hashCode();
+        result = prime * result + ((objectUrn == null) ? 0 : objectUrn.hashCode());
+        result = prime * result + ((scopeUri == null) ? 0 : scopeUri.hashCode());
         return result;
+    }
+
+    @Override
+    public String getScopeUri()
+    {
+        return this.scopeUri;
+    }
+
+    @Override
+    public void setScopeUri(String scopeUri)
+    {
+        this.scopeUri = scopeUri;
     }
 }
