@@ -1,5 +1,8 @@
 package net.smartcosmos.util.mapper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /*
  * *#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
  * SMART COSMOS Platform Core SDK
@@ -23,17 +26,19 @@ package net.smartcosmos.util.mapper;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
-import java.util.Date;
-
 public class DateMapper implements IMetadataValueMapper<Date>
 {
+
+    public static final String RFC_3339_FORMAT = "yyyy-MM-dd'T'HH:mm:ssXXX";
 
     protected static final DateTimeFormatter RFC3339 = ISODateTimeFormat.dateTimeParser();
 
     @Override
     public String toString(Date value)
     {
-        return value.toString();
+        // SimpleDateFormat is NOT thread safe and must be instantiated locally like this!
+        SimpleDateFormat dateFormat = new SimpleDateFormat(RFC_3339_FORMAT);
+        return dateFormat.format(value);
     }
 
     @Override
