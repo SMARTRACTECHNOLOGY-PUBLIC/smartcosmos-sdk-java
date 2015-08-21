@@ -228,6 +228,10 @@ public final class Field
 
     public static final String STATS_LIBRARIES = "libraries";
 
+    //
+    // Registration
+    //
+    public static final String SEND_REGISTRATION_EMAIL_FIELD = "sendRegistrationEmail";
 
     private Field()
     {
